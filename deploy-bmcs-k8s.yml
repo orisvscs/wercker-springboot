@@ -28,6 +28,6 @@ spec:
       containers:
       - name: springboot
         image: jeetjagasia/wercker-springboot:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
