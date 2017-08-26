@@ -26,4 +26,11 @@ deploy-accs:
         application_name: springboot-accs-demo
         application_type: java
         file: springbootdemo-0.0.1.zip
-     
+deploy-to-oracle-bm:
+  steps:
+    - kubectl:
+        name: deploy dockernode app to Kubernetes
+        server: $KUBERNETES_MASTER
+        token: $KUBERNETES_TOKEN
+        insecure-skip-tls-verify: true
+        command: apply -f /pipeline/source/deploy-bmcs-k8s.yml     
