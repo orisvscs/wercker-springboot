@@ -29,7 +29,7 @@ deploy-accs:
 deploy-to-oracle-bm:
   steps:
     - kubectl:
-        name: deploy dockernode app to Kubernetes
+        name: deploy springboot app to Kubernetes
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
