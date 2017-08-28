@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: springboot
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: jeetjagasia/wercker-springboot:latest
+        image: jeetjagasia/wercker-springboot
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
