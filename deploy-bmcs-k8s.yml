@@ -7,7 +7,6 @@ metadata:
 spec:
   ports:
   - port: 8080
-    targetPort: 31016
     name: http
   selector:
     app: springboot
