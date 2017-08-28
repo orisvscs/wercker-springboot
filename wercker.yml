@@ -12,7 +12,7 @@ push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
         tag: latest
-        repository: $DOCKER_REPOSITORY
+        repository: $DOCKER_REPOSITORY:$DOCKER_TAG
         registry: https://registry.hub.docker.com/
         cmd: java -jar  /pipeline/source/target/springbootdemo-0.0.1.war
 deploy-accs:
