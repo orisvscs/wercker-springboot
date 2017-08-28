@@ -22,7 +22,7 @@ spec:
     metadata:
       labels:
         app: springboot
-        version: v1
+        version: v2
         track: stable
     spec:
       containers:
