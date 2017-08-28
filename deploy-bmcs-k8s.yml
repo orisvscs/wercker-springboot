@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: jeetjagasia/wercker-springboot:$DOCKER_TAG
+        image: jeetjagasia/wercker-springboot:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
