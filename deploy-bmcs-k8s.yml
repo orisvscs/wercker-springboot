@@ -22,12 +22,10 @@ spec:
     metadata:
       labels:
         app: springboot
-        version: v1
-        track: stable
     spec:
       containers:
       - name: springboot
-        image: jeetjagasia/wercker-springboot:latest
+        image: jeetjagasia/wercker-springboot
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
