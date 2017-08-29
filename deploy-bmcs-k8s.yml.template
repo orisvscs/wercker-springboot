@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: springboot
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
