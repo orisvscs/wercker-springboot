@@ -11,10 +11,11 @@ push:
     - internal/docker-push:
         username: $DOCKER_USERNAME
         password: $DOCKER_PASSWORD
-        tag: $DOCKER_TAG
+        tag: $WERCKER_GIT_COMMIT
         repository: $DOCKER_REPOSITORY
         registry: https://registry.hub.docker.com/
         cmd: java -jar  /pipeline/source/target/springbootdemo-0.0.1.war
+
 deploy-accs:
   steps:
     # Deploy to Oracle Application Container Cloud
@@ -26,11 +27,31 @@ deploy-accs:
         application_name: springboot-accs-demo
         application_type: java
         file: springbootdemo-0.0.1.zip
+
 deploy-to-oracle-bm:
   steps:
+  
+      # https://github.com/wercker/step-bash-template
+    # This Wercker step will look for files in our repo with a .template extension.
+    # It will expand any environment variables in those files, then remove the
+    # template extension.
+    - bash-template
+
+    # The step above should leave us with a Kubernetes service and deployment yml files.
+    # We'll create a directory to move them to.
+    - script:
+        name: Prepare Kubernetes files
+        code: |
+          mkdir $WERCKER_OUTPUT_DIR/kubernetes
+          mv deploy-bmcs*.yml $WERCKER_OUTPUT_DIR/kubernetes
+
+    # The step above should push service and deployment to K8S cluster.
+    # Execute yml filecreated in kubernetes directory
+    # changing this command: apply -f /pipeline/source/deploy-bmcs-k8s.yml      
     - kubectl:
         name: deploy springboot app to Kubernetes
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         insecure-skip-tls-verify: true
-        command: apply -f /pipeline/source/deploy-bmcs-k8s.yml     
+        command: apply -f $WERCKER_OUTPUT_DIR/kubernetes/
+        
