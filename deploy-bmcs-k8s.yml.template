@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: ${DOCKERHUB_REPOSITORY}:${WERCKER_GIT_COMMIT}
+        image: ${DOCKER_REPOSITORY}:${WERCKER_GIT_COMMIT}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
