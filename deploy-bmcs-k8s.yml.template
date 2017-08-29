@@ -22,7 +22,6 @@ spec:
     metadata:
       labels:
         app: springboot
-        commit: ${WERCKER_GIT_COMMIT}
     spec:
       containers:
       - name: springboot
