@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="css/cloud3.css">
 
-<title>Oracle Public Cloud Demo</title>
+<title>Kubernetes hosted on Oracle Public Cloud Demo</title>
 
 </head>
 <body>
@@ -36,7 +36,7 @@
 
       <div class="blueBannerHeading">
         <h1 class="blueBannerTitleWithSubtitle">
-          <a style="color: #ffffff">Oracle Container Cloud Service + Wercker</a>
+          <a style="color: #ffffff">Kubernetes hosted on Oracle Cloud + Wercker</a>
         </h1>
       </div>
 
@@ -58,7 +58,7 @@
               <p>
                 <span style="color: #333; text-decoration: none">Configure, deploy, administer, monitor, 
           and orchestrate services (or stacks of services) as Docker containers 
-          across multiple hosts and scale them as needed with Oracle Container Cloud Service.</span>
+          across multiple hosts and scale them as needed with Kubernetes cluster hosted on Oracle Cloud.</span>
               </p>              
               <div>
                 <img max-width="100%" height="auto"
