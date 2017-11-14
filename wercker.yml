@@ -13,7 +13,7 @@ push:
         password: $DOCKER_PASSWORD
         tag: $WERCKER_GIT_COMMIT
         repository: $DOCKER_REPOSITORY
-        registry: https://registry.hub.docker.com/
+        registry: https://hub.docker.com/
         cmd: java -jar  /pipeline/source/target/springbootdemo-0.0.1.war
 
 deploy-accs:
