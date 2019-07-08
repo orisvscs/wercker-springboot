@@ -9,7 +9,7 @@ build:
         name: config
         code: |
           export KUBERNETES_VERSION="1.12.7"
-          export KUBERNETES_SHA512="52b4b5366c1f3d372c293172136a9051cb9a3297967e009df2675763403a13128466370dbc825f6bd4a44f5df5ab7e44e9c7eddbcf8bf14a6a394b7b01d85e0f"
+          export KUBERNETES_SHA512="e2791a7797d05b6e2885d990364b04fdf39bccda3b092d32e783eb3f60658229adce47dfdbb3480f1d50146eb386bff02d1118179f54e220c31586a123a95eff"
           echo "Installing version $KUBERNETES_VERSION of kubernetes"
 push:
   steps:
