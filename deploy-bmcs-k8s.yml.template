@@ -31,3 +31,20 @@ spec:
         - containerPort: 8080
       imagePullSecrets:
       - name: ${OKE_IMAGE_SECRET}
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: javaspringboot-ing
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  tls:
+  - secretName: tls-secret
+  rules:
+  - http:
+      paths:
+      -  backend:
+          serviceName: springboot
+          servicePort: 8080
