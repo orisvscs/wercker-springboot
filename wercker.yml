@@ -5,6 +5,12 @@ build:
     - script:
         name: Maven install
         code: mvn install
+    - script:
+        name: config
+        code: |
+          export KUBERNETES_VERSION="1.12.7"
+          export KUBERNETES_SHA512="52b4b5366c1f3d372c293172136a9051cb9a3297967e009df2675763403a13128466370dbc825f6bd4a44f5df5ab7e44e9c7eddbcf8bf14a6a394b7b01d85e0f"
+          echo "Installing version $KUBERNETES_VERSION of kubernetes"
 push:
   steps:
     # Push to public docker repo
@@ -39,6 +45,7 @@ deploy-to-oracle-bm:
 
     # The step above should leave us with a Kubernetes service and deployment yml files.
     # We'll create a directory to move them to.
+
     - script:
         name: Prepare Kubernetes files
         code: |
